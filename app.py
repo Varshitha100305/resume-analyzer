@@ -18,7 +18,7 @@ if st.button("Analyze"):
 
                 score, matching, missing = utils.analyze_resume(resume_text, job_desc)
 
-                st.success("Analysis Complete ")
+                st.success("Analysis Complete")
 
                 st.write(f"## Match Score: {score}%")
 
