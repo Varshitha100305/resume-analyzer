@@ -11,11 +11,57 @@ def extract_text(file):
 
 
 def extract_skills(text):
-    skills = [
-        "python", "sql", "machine learning", "deep learning",
-        "nlp", "docker", "aws", "api", "pandas", "numpy",
-        "tensorflow", "pytorch", "data analysis"
-    ]
+  skills = [
+    # Programming
+    "python", "java", "c++", "c", "javascript", "typescript",
+
+    # Data & Analysis
+    "sql", "mysql", "postgresql", "mongodb", "data analysis",
+    "data science", "data visualization", "excel", "power bi", "tableau",
+
+    # ML / AI Core
+    "machine learning", "ml", "deep learning", "ai", "artificial intelligence",
+    "supervised learning", "unsupervised learning", "reinforcement learning",
+
+    # NLP / LLM
+    "nlp", "natural language processing", "transformers",
+    "hugging face", "langchain", "llm", "rag", "chatbot",
+
+    # Frameworks / Libraries
+    "pandas", "numpy", "scikit-learn", "sklearn",
+    "tensorflow", "keras", "pytorch", "opencv",
+
+    # Web / Backend
+    "flask", "django", "fastapi", "rest api", "api", "apis",
+
+    # Cloud / DevOps
+    "aws", "amazon web services", "gcp", "google cloud",
+    "azure", "docker", "kubernetes", "ci/cd", "jenkins",
+
+    # Software Engineering
+    "data structures", "algorithms", "oops", "object oriented programming",
+    "system design", "design patterns", "problem solving",
+
+    # Tools
+    "git", "github", "gitlab", "linux", "bash",
+
+    # Big Data
+    "hadoop", "spark", "pyspark",
+
+    # MLOps
+    "mlops", "model deployment", "model serving", "airflow"
+]
+    skill_map = {
+    "ml": "machine learning",
+    "ai": "artificial intelligence",
+    "nlp": "natural language processing",
+    "apis": "api",
+    "restful api": "api",
+    "aws cloud": "aws",
+    "gcp cloud": "gcp"
+}
+def normalize_skill(skill):
+    return skill_map.get(skill.lower(), skill.lower())
 
     text = text.lower()
     found_skills = []
