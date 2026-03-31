@@ -1,31 +1,31 @@
 import streamlit as st
-from utils import extract_text, create_prompt
+import utils
 from analyzer import analyze
+
+st.set_page_config(page_title="AI Resume Analyzer", layout="centered")
 
 st.title("AI Resume Analyzer")
 
-st.write("App started")
-
-uploaded_file = st.file_uploader("Upload Resume (PDF)")
+st.write("Upload your resume and compare it with a job description")
+uploaded_file = st.file_uploader("Upload Resume (PDF)", type=["pdf"])
 job_desc = st.text_area("Paste Job Description")
-
 if st.button("Analyze"):
     try:
-        if uploaded_file and job_desc:
-            st.write("Processing...")
+        if uploaded_file is not None and job_desc.strip() != "":
+            
+            with st.spinner("Analyzing your resume..."):
+                
+                resume_text = utils.extract_text(uploaded_file)
 
-            resume_text = extract_text(uploaded_file)
-            st.write("Resume extracted")
+                prompt = utils.create_prompt(resume_text, job_desc)
 
-            prompt = create_prompt(resume_text, job_desc)
+                result = analyze(prompt)
 
-            result = analyze(prompt)
-            st.write("Analysis done")
-
-            st.write(result)
+                st.success("Analysis Complete")
+                st.write(result)
 
         else:
-            st.warning("Please upload resume and enter job description")
+            st.warning("Please upload a resume and enter job description")
 
     except Exception as e:
         st.error(f"Error: {e}")
