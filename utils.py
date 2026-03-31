@@ -8,9 +8,7 @@ def extract_text(file):
         if content:
             text += content
     return text
-
-
-def extract_skills(text):
+    def extract_skills(text):
   skills = [
     # Programming
     "python", "java", "c++", "c", "javascript", "typescript",
@@ -51,37 +49,6 @@ def extract_skills(text):
     # MLOps
     "mlops", "model deployment", "model serving", "airflow"
 ]
-    skill_map = {
-    "ml": "machine learning",
-    "ai": "artificial intelligence",
-    "nlp": "natural language processing",
-    "apis": "api",
-    "restful api": "api",
-    "aws cloud": "aws",
-    "gcp cloud": "gcp"
-}
-def normalize_skill(skill):
-    return skill_map.get(skill.lower(), skill.lower())
-
     text = text.lower()
     found_skills = []
 
-    for skill in skills:
-        if skill in text:
-            found_skills.append(skill.title())
-
-    return list(set(found_skills))
-
-def analyze_resume(resume_text, job_desc):
-    resume_skills = extract_skills(resume_text)
-    job_skills = extract_skills(job_desc)
-
-    matching = list(set(resume_skills) & set(job_skills))
-    missing = list(set(job_skills) - set(resume_skills))
-
-    if len(job_skills) == 0:
-        score = 0
-    else:
-        score = int((len(matching) / len(job_skills)) * 100)
-
-    return score, matching, missing
