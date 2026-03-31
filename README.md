@@ -1,36 +1,35 @@
-#  AI Resume Analyzer
+# AI Resume Analyzer (Free Version)
 
-An AI-powered web application that analyzes resumes against job descriptions and provides:
-- Match score
+An AI-powered web application that analyzes resumes against job descriptions and provides insights like:
+- Matching skills
 - Missing skills
-- Improvement suggestions
+- Suggestions to improve resume
 
-Built using LLMs and deployed as an interactive web app.
-
----
-
-##  Features
-1 Upload resume (PDF)  
-2 Paste job description  
-3 AI-powered analysis  
-4 Match score (%)  
-5 Missing skills detection  
-6 Resume improvement suggestions  
-7 Clean UI with real-time results  
+This project is built using **free open-source models (Hugging Face)** and deployed using Streamlit.
 
 ---
 
-##  Tech Stack
+## Features
+1.Upload resume (PDF)  
+2.Paste job description  
+3.Extract text from resume  
+4.AI-based comparison  
+5.Identify matching & missing skills  
+6.Suggestions for improvement  
+7.Fully FREE (No OpenAI API required)  
+
+---
+
+## Tech Stack
 
 - Python  
-- Streamlit (Frontend + Deployment)  
-- OpenAI API (LLM)  
-- LangChain (LLM orchestration)  
+- Streamlit (UI + Deployment)  
+- Hugging Face Transformers (AI model)  
 - PyPDF (PDF text extraction)  
 
 ---
 
-##  How It Works
+## How It Works
 
 1. User uploads a resume (PDF)
 2. Text is extracted using PyPDF
@@ -43,8 +42,8 @@ Built using LLMs and deployed as an interactive web app.
 
 ---
 
-##  Project Structure
-  
+## Project Structure
+
 ## Installation & Setup
  1. Clone the repository
  2. Install dependencies
