@@ -32,12 +32,12 @@ Built using LLMs and deployed as an interactive web app.
 
 ##  How It Works
 
-1. User uploads resume (PDF)
-2. Text is extracted from the document
+1. User uploads a resume (PDF)
+2. Text is extracted using PyPDF
 3. Job description is provided by user
-4. LLM compares resume with job description
+4. AI model compares both inputs
 5. Output generated:
-   - Match Score
+   - Matching Skills
    - Missing Skills
    - Suggestions
 
@@ -60,8 +60,8 @@ Create a `.env` file or set environment variable:
 ## Deployment
 
 Deployed using Streamlit Cloud
+Live app: https://resume-analyzer-ex965.streamlit.app/
 
-Live App: https://your-app-link.streamlit.app
 
 ---
 
